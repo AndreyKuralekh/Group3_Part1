@@ -1,4 +1,4 @@
-﻿namespace Group3_Hw5
+﻿namespace Group3_Hw6
 {
     /*
         Create a student class and describe its main characteristics: 
@@ -50,8 +50,11 @@
             student2.AddNewCourse(courses[6]);
             student2.PrintInfo();
             //------------------------------------------------------------------------
+            var techer1 = new Teacher("Petro", "Ivanupollo", 26, "Lviv");
+            techer1.AddNewCourse(courses[0]);
+            techer1.DescribeYourselfInfo();
 
-
+            //------------------------------------------------------------------------
             student1.DeleteCourse("Match");
             student1.PrintInfo();
             student2.PrintInfo();

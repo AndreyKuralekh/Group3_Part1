@@ -4,22 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw5
+namespace Group3_Hw6
 {
-    internal class Student
+    internal class Student :Person
     {
-        private string FirstName { get; set; }
-        private string LastName { get; set; } 
-        private int Age { get; set; } 
-        private string City { get; set; } 
-
-        private Courses[] CoursesAttended = new Courses[10];
-
-        public Student(): this("NoBody") 
+        public Student() : this("NoBody")
         {
             Console.WriteLine("Contructor reload 1");
         }
-        public Student(string firstName) :this(firstName, "NoBody")
+        public Student(string firstName) : this(firstName, "NoBody")
         {
             this.FirstName = firstName;
             //Console.WriteLine("Contructor reload 2");
@@ -37,7 +30,7 @@ namespace Group3_Hw5
             this.Age = age;
             //Console.WriteLine("Contructor reload 4");
         }
-        public Student(string firstName, string lastName, int age, string city) 
+        public Student(string firstName, string lastName, int age, string city)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -54,49 +47,23 @@ namespace Group3_Hw5
             this.CoursesAttended = coursesAttended;
             //Console.WriteLine("Contructor reload 6");
         }
-
-        //output basic information
-        public void PrintInfo () 
+        public override void PrintInfo()
         {
             Console.WriteLine("============================================");
-
+            Console.WriteLine("Person`s role: Student");
             Console.WriteLine("============================================");
-            Console.WriteLine("Basic student`s info:");
-            Console.WriteLine("============================================");
-            Console.WriteLine($"FirstName: {this.FirstName}");
-            Console.WriteLine($"LastName: {this.LastName}");
-            Console.WriteLine($"Age: {this.Age}");
-            Console.WriteLine($"City: {this.City}");
-
-            Console.WriteLine("============================================");
-            Console.WriteLine("Courses list:");
-            Console.WriteLine("============================================");
-            int i = 1;
-            foreach (var cousrce in CoursesAttended)
-            {
-                if (!(cousrce == null))
-                {
-                    Console.Write($"{i++}.");
-                    cousrce.PrintCourceInfo();
-                }
-            }
-
+            base.PrintInfo();
         }
-        //Add one course to the student(add a new course to the course array).
-        public void AddNewCourse(Courses newCource ) 
+
+        public override void DescribeYourselfInfo()
         {
-            int i = 0;
-            foreach (var cource in this.CoursesAttended)
-            {
-                if (cource == null)
-                {
-                    this.CoursesAttended[i] = newCource; 
-                    this.CoursesAttended[i].AddOneStudent();
-                    break;
-                }   
-                i++;
-            }
+
+            Console.WriteLine("============================================");
+            Console.WriteLine("Person`s role: Student");
+            Console.WriteLine("============================================");
+            base.DescribeYourselfInfo();
         }
+
         //Delete a course from a student.
         public void DeleteCourse(string courceName)
         {

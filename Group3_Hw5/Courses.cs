@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw5
+namespace Group3_Hw6
 {
     public class Courses
     {
