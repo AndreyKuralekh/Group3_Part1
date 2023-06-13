@@ -13,7 +13,7 @@ namespace Group3_Hw7
         protected int Age { get; set; }
         protected string City { get; set; }
 
-        public CoursesCollection<Courses> CoursesAttended = new CoursesCollection<Courses>();
+        public ManagedCollection<Courses> CoursesAttended = new ManagedCollection<Courses>();
 
         //output basic information
         public virtual void PrintInfo()

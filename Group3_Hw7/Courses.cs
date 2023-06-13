@@ -8,7 +8,7 @@ namespace Group3_Hw7
 {
     public class Courses 
     {
-        public StudentCollection<Student> StudentAttended = new StudentCollection<Student>();
+        public ManagedCollection<Student> StudentAttended = new ManagedCollection<Student>();
         public string CourseName { get; set; }
         private string TeacherName { get; set; }
         private int CourseDuration { get; set; }

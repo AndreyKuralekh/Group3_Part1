@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group3_Hw7
 {
-    public interface ICoursesCollection<T> where T : Courses
+    public interface IManagedCollection<T> 
     {//add, remove, get the number
         public void Add(T course);
 

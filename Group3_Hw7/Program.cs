@@ -38,13 +38,13 @@
             techer1.PrintInfo();
             //------------------------------------------------------------------------
             var techer2 = new Teacher("Sidor", "Ivanoff", 28, "Kiev");      //Match
-            techer2.CoursesAttended.Add(c1);
-            techer2.StudentAttended.Add(student1);
+            techer2.CoursesAttended.Add(c1);        //History   -   Ivanupollo
+            techer2.StudentAttended.Add(student1);  //Taras     -   Shevchenko
             techer2.PrintInfo();
             //------------------------------------------------------------------------
             var techer3 = new Teacher("Andrii", "Petroff", 33, "Kiev");      //Philosofy
-            techer3.CoursesAttended.Add(c3);
-            techer3.StudentAttended.Add(student1);
+            techer3.CoursesAttended.Add(c3);        //Philosofy -   Petroff
+            techer3.StudentAttended.Add(student1);  //Taras     -   Shevchenko
             techer3.PrintInfo();
             //------------------------------------------------------------------------
             var techer4 = new Teacher("Ivan", "Putinkoff", 47, "Kiev");      //Law

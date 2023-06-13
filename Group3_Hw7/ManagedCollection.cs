@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Group3_Hw7
 {
-    public class StudentCollection<T> : IStudentCollection<T> where T : Student
+    public class ManagedCollection<T> : IManagedCollection<T> 
     {
         private List<T> collection;
-        public StudentCollection()
+        public ManagedCollection()
         {
             collection = new List<T>();
         }

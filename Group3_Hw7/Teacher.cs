@@ -8,7 +8,7 @@ namespace Group3_Hw7
 {
     public class Teacher :Person
     {
-        public StudentCollection<Student> StudentAttended = new StudentCollection<Student>();
+        public ManagedCollection<Student> StudentAttended = new ManagedCollection<Student>();
         public Teacher() : this("NoBody")
         {
             Console.WriteLine("Contructor reload 1");
