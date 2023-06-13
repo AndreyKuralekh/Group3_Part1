@@ -38,7 +38,7 @@
             techer1.PrintInfo();
             //------------------------------------------------------------------------
             var techer2 = new Teacher("Sidor", "Ivanoff", 28, "Kiev");      //Match
-            techer2.CoursesAttended.Add(c1);        //History   -   Ivanupollo
+            techer2.CoursesAttended.Add(c2);        //History   -   Ivanoff
             techer2.StudentAttended.Add(student1);  //Taras     -   Shevchenko
             techer2.PrintInfo();
             //------------------------------------------------------------------------
