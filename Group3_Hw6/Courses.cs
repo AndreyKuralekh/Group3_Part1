@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw6
+namespace Group3_Hw7
 {
-    public class Courses
+    public class Courses 
     {
+        public StudentCollection<Student> StudentAttended = new StudentCollection<Student>();
         public string CourseName { get; set; }
         private string TeacherName { get; set; }
         private int CourseDuration { get; set; }

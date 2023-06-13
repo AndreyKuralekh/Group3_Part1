@@ -1,11 +1,10 @@
-﻿using Group3_Hw6;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw6
+namespace Group3_Hw7
 {
     public abstract class Person
     {
@@ -14,7 +13,7 @@ namespace Group3_Hw6
         protected int Age { get; set; }
         protected string City { get; set; }
 
-        protected Courses[] CoursesAttended = new Courses[10];
+        public CoursesCollection<Courses> CoursesAttended = new CoursesCollection<Courses>();
 
         //output basic information
         public virtual void PrintInfo()
@@ -29,16 +28,15 @@ namespace Group3_Hw6
             Console.WriteLine("============================================");
             Console.WriteLine("Courses list:");
             Console.WriteLine("============================================");
-            int i = 1;
-            foreach (var cousrce in CoursesAttended)
+            int i = 0;
+            foreach (Courses course in CoursesAttended)
             {
-                if (!(cousrce == null))
+                if (!(course == null))
                 {
                     Console.Write($"{i++}.");
-                    cousrce.PrintCourceInfo();
+                    course.PrintCourceInfo();
                 }
             }
-
         }
 
         //output Exch. information
@@ -65,19 +63,5 @@ namespace Group3_Hw6
             }
         }
         //Add one course to the student(add a new course to the course array).
-        public void AddNewCourse(Courses newCource)
-        {
-            int i = 0;
-            foreach (var cource in this.CoursesAttended)
-            {
-                if (cource == null)
-                {
-                    this.CoursesAttended[i] = newCource;
-                    this.CoursesAttended[i].AddOneStudent();
-                    break;
-                }
-                i++;
-            }
-        }
     }
 }

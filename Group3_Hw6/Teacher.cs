@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw6
+namespace Group3_Hw7
 {
     public class Teacher :Person
     {
+        public StudentCollection<Student> StudentAttended = new StudentCollection<Student>();
         public Teacher() : this("NoBody")
         {
             Console.WriteLine("Contructor reload 1");
@@ -15,20 +16,17 @@ namespace Group3_Hw6
         public Teacher(string firstName) : this(firstName, "NoBody")
         {
             this.FirstName = firstName;
-            //Console.WriteLine("Contructor reload 2");
         }
         public Teacher(string firstName, string lastName) : this(firstName, lastName, 0)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            //Console.WriteLine("Contructor reload 3");
         }
         public Teacher(string firstName, string lastName, int age) : this(firstName, lastName, age, "Nowhere")
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Age = age;
-            //Console.WriteLine("Contructor reload 4");
         }
         public Teacher(string firstName, string lastName, int age, string city)
         {
@@ -36,17 +34,16 @@ namespace Group3_Hw6
             this.LastName = lastName;
             this.Age = age;
             this.City = city;
-            //Console.WriteLine("Contructor reload 5");
         }
-        public Teacher(string firstName, string lastName, int age, string city, Courses[] coursesAttended)
+/*        public Teacher(string firstName, string lastName, int age, string city, List<Courses> coursesAttended)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Age = age;
             this.City = city;
             this.CoursesAttended = coursesAttended;
-            //Console.WriteLine("Contructor reload 6");
         }
+*/
         public override void PrintInfo()
         {
             Console.WriteLine("Person`s role: Teacher");

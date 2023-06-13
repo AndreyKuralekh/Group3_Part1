@@ -1,64 +1,57 @@
-﻿namespace Group3_Hw6
+﻿namespace Group3_Hw7
 {
     /*
-        Create a student class and describe its main characteristics: 
-            - First name, 
-            - last name, 
-            - age, 
-            - city, 
-            - courses attended (an array of courses).
-        
-        Describe the following actions: Print (output basic information).
-        
-        Add one course to the student (add a new course to the course array).
-        Delete a course from a student.
-       
-        Create a course class and describe its main characteristics: 
-            - course name, 
-            - teacher name, 
-            - course duration, 
-            - number of students.
-        
-        Describe the following actions: Print (output basic information).
-        
-        Add a student to the course group (add one student to the number of students).
-
-    for each of the classes create a chain of calling constructors.
+        - add a collection of students to the teacher
+        - add a collection of students to the course
+        - add a collection of courses to a student
+        - add a collection of courses to the teacher
+        - implement collection management methods (add, remove, get the number of elements in the collection)
      */
     internal class Program
     {
         static void Main(string[] args)
         {
-            Courses[] courses = new Courses[10];
-            courses[0] = new Courses("History", "Ivanupollo", 4, 0);
-            courses[1] = new Courses("Match", "Ivanoff", 12, 0);
-            courses[2] = new Courses("Philosofy", "Petroff", 8, 0);
-            courses[3] = new Courses("Architecture", "Sidoroff", 6, 0);
-            courses[4] = new Courses("Dentistry", "Petrenko", 22, 0);
-            courses[5] = new Courses("Economics", "Ivanoff", 3, 0);
-            courses[6] = new Courses("Law", "Putinkoff", 15, 0);
-            
+            Courses c0 = new Courses("Grammar", "Ivanupenkoff", 8, 0);
+            Courses c1 = new Courses("History", "Ivanupollo", 4, 0);
+            Courses c2 = new Courses("Match", "Ivanoff", 12, 0);
+            Courses c3 = new Courses("Philosofy", "Petroff", 8, 0);
+            Courses c4 = new Courses("Architecture", "Sidoroff", 6, 0);
+            Courses c5 = new Courses("Dentistry", "Petrenko", 22, 0);
+            Courses c6 = new Courses("Economics", "Ivanoff", 3, 0);
+            Courses c7 = new Courses("Law", "Putinkoff", 15, 0);
+
             //------------------------------------------------------------------------
             var student1 = new Student("Taras","Shevchenko",22, "Kiev");
-            student1.AddNewCourse(courses[0]);
-            student1.AddNewCourse(courses[1]);
-            student1.AddNewCourse(courses[2]);
+            student1.CoursesAttended.Add(c2);   //Match     -   Ivanoff
+            student1.CoursesAttended.Add(c3);   //Philosofy -   Petroff
+            student1.CoursesAttended.Add(c7);   //Law       -   Putinkoff
             student1.PrintInfo();
             //------------------------------------------------------------------------
             var student2 = new Student("Petro", "Petroff", 26, "Lviv");
-            student2.AddNewCourse(courses[1]);
-            student2.AddNewCourse(courses[6]);
+            student2.CoursesAttended.Add(c1);   //History   -   Ivanupollo
+            student2.CoursesAttended.Add(c7);   //Law       -   Putinkoff
             student2.PrintInfo();
             //------------------------------------------------------------------------
-            var techer1 = new Teacher("Petro", "Ivanupollo", 26, "Lviv");
-            techer1.AddNewCourse(courses[0]);
-            techer1.DescribeYourselfInfo();
-
+            var techer1 = new Teacher("Petro", "Ivanupollo", 26, "Lviv");   //History
+            techer1.CoursesAttended.Add(c1);
+            techer1.StudentAttended.Add(student2);
+            techer1.PrintInfo();
             //------------------------------------------------------------------------
-            student1.DeleteCourse("Match");
-            student1.PrintInfo();
-            student2.PrintInfo();
-            //
+            var techer2 = new Teacher("Sidor", "Ivanoff", 28, "Kiev");      //Match
+            techer2.CoursesAttended.Add(c1);
+            techer2.StudentAttended.Add(student1);
+            techer2.PrintInfo();
+            //------------------------------------------------------------------------
+            var techer3 = new Teacher("Andrii", "Petroff", 33, "Kiev");      //Philosofy
+            techer3.CoursesAttended.Add(c3);
+            techer3.StudentAttended.Add(student1);
+            techer3.PrintInfo();
+            //------------------------------------------------------------------------
+            var techer4 = new Teacher("Ivan", "Putinkoff", 47, "Kiev");      //Law
+            techer3.CoursesAttended.Add(c7);
+            techer3.StudentAttended.Add(student1);
+            techer3.StudentAttended.Add(student2);
+            techer3.PrintInfo();
 
             Console.WriteLine($"finish");
 
