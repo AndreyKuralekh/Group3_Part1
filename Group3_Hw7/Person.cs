@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw7
+namespace Group3_Hw8
 {
     public abstract class Person
     {
-        protected string FirstName { get; set; }
-        protected string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         protected int Age { get; set; }
         protected string City { get; set; }
 

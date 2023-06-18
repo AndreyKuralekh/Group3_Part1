@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group3_Hw7
+namespace Group3_Hw8
 {
     public class Teacher :Person
     {
